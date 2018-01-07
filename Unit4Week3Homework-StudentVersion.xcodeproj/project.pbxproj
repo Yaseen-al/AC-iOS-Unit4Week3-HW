@@ -12,6 +12,7 @@
 		5410A6C81FFFDF1200935A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5410A6C71FFFDF1200935A9A /* Assets.xcassets */; };
 		5410A6D31FFFDF6500935A9A /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */; };
 		819AA3142000942D00048DB7 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA3132000942D00048DB7 /* FavoriteViewController.swift */; };
+		819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5410A6CC1FFFDF1200935A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		819AA3132000942D00048DB7 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5410A6C21FFFDF1200935A9A /* WeatherViewController.swift */,
+				819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */,
 				819AA3132000942D00048DB7 /* FavoriteViewController.swift */,
 			);
 			path = ViewControllers;
@@ -169,6 +172,7 @@
 				5410A6D31FFFDF6500935A9A /* ZipCodeHelper.swift in Sources */,
 				5410A6C31FFFDF1200935A9A /* WeatherViewController.swift in Sources */,
 				819AA3142000942D00048DB7 /* FavoriteViewController.swift in Sources */,
+				819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */,
 				5410A6C11FFFDF1200935A9A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
