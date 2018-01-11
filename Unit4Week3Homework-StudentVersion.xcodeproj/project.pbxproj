@@ -13,6 +13,17 @@
 		5410A6D31FFFDF6500935A9A /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */; };
 		819AA3142000942D00048DB7 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA3132000942D00048DB7 /* FavoriteViewController.swift */; };
 		819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */; };
+		819AA318200305B600048DB7 /* SavedForcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA317200305B600048DB7 /* SavedForcastView.swift */; };
+		819AA31C20030FC500048DB7 /* ForcastSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA31B20030FC500048DB7 /* ForcastSearchView.swift */; };
+		819AA31E2003146A00048DB7 /* CustomSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA31D2003146A00048DB7 /* CustomSearchCollectionViewCell.swift */; };
+		81D6F8DB20069EA600D1F3A7 /* DetailWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8DA20069EA600D1F3A7 /* DetailWeatherView.swift */; };
+		81D6F8DD20070F5A00D1F3A7 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8DC20070F5A00D1F3A7 /* NetworkHelper.swift */; };
+		81D6F8DF2007138C00D1F3A7 /* Forcast Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8DE2007138C00D1F3A7 /* Forcast Model.swift */; };
+		81D6F8E12007CA4000D1F3A7 /* Forcast APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8E02007CA4000D1F3A7 /* Forcast APIClient.swift */; };
+		81D6F8E72007F26A00D1F3A7 /* Photo Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8E62007F26A00D1F3A7 /* Photo Model.swift */; };
+		81D6F8E92007F29300D1F3A7 /* Photo APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8E82007F29300D1F3A7 /* Photo APIClient.swift */; };
+		81D6F8EB2007F33B00D1F3A7 /* Image APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */; };
+		81D6F8ED20080F1D00D1F3A7 /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		819AA3132000942D00048DB7 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWeatherViewController.swift; sourceTree = "<group>"; };
+		819AA317200305B600048DB7 /* SavedForcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedForcastView.swift; sourceTree = "<group>"; };
+		819AA31B20030FC500048DB7 /* ForcastSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcastSearchView.swift; sourceTree = "<group>"; };
+		819AA31D2003146A00048DB7 /* CustomSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		81D6F8DA20069EA600D1F3A7 /* DetailWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherView.swift; sourceTree = "<group>"; };
+		81D6F8DC20070F5A00D1F3A7 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		81D6F8DE2007138C00D1F3A7 /* Forcast Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forcast Model.swift"; sourceTree = "<group>"; };
+		81D6F8E02007CA4000D1F3A7 /* Forcast APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forcast APIClient.swift"; sourceTree = "<group>"; };
+		81D6F8E62007F26A00D1F3A7 /* Photo Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo Model.swift"; sourceTree = "<group>"; };
+		81D6F8E82007F29300D1F3A7 /* Photo APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo APIClient.swift"; sourceTree = "<group>"; };
+		81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image APIClient.swift"; sourceTree = "<group>"; };
+		81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +110,13 @@
 			isa = PBXGroup;
 			children = (
 				5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */,
+				81D6F8E62007F26A00D1F3A7 /* Photo Model.swift */,
+				81D6F8E82007F29300D1F3A7 /* Photo APIClient.swift */,
+				81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */,
+				81D6F8DC20070F5A00D1F3A7 /* NetworkHelper.swift */,
+				81D6F8DE2007138C00D1F3A7 /* Forcast Model.swift */,
+				81D6F8E02007CA4000D1F3A7 /* Forcast APIClient.swift */,
+				81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,6 +124,10 @@
 		819AA3122000911C00048DB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				819AA317200305B600048DB7 /* SavedForcastView.swift */,
+				819AA31B20030FC500048DB7 /* ForcastSearchView.swift */,
+				819AA31D2003146A00048DB7 /* CustomSearchCollectionViewCell.swift */,
+				81D6F8DA20069EA600D1F3A7 /* DetailWeatherView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,9 +204,20 @@
 			files = (
 				5410A6D31FFFDF6500935A9A /* ZipCodeHelper.swift in Sources */,
 				5410A6C31FFFDF1200935A9A /* WeatherViewController.swift in Sources */,
+				81D6F8DB20069EA600D1F3A7 /* DetailWeatherView.swift in Sources */,
 				819AA3142000942D00048DB7 /* FavoriteViewController.swift in Sources */,
+				81D6F8DD20070F5A00D1F3A7 /* NetworkHelper.swift in Sources */,
+				81D6F8E92007F29300D1F3A7 /* Photo APIClient.swift in Sources */,
+				81D6F8E72007F26A00D1F3A7 /* Photo Model.swift in Sources */,
+				819AA318200305B600048DB7 /* SavedForcastView.swift in Sources */,
 				819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */,
+				81D6F8ED20080F1D00D1F3A7 /* FileManagerHelper.swift in Sources */,
+				819AA31C20030FC500048DB7 /* ForcastSearchView.swift in Sources */,
+				81D6F8DF2007138C00D1F3A7 /* Forcast Model.swift in Sources */,
+				81D6F8EB2007F33B00D1F3A7 /* Image APIClient.swift in Sources */,
+				81D6F8E12007CA4000D1F3A7 /* Forcast APIClient.swift in Sources */,
 				5410A6C11FFFDF1200935A9A /* AppDelegate.swift in Sources */,
+				819AA31E2003146A00048DB7 /* CustomSearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
