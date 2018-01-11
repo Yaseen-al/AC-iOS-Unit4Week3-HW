@@ -21,18 +21,19 @@ enum AppError: Error {
     case badData
     case urlError(rawError: Error)
 }
-class NetworkHelper{
-    private init (){}
+class NetworkHelper {
+    private init() {}
     static let manager = NetworkHelper()
     let urlSession = URLSession(configuration: URLSessionConfiguration.default)
-    func performDataTask(with url: URL, completion: @escaping ((Data)->Void), errorHandler: @escaping ((Error)->Void)){
-        self.urlSession.dataTask(with: url) { (data:Data?, response: URLResponse?, error: Error?) in
+    
+    func performDataTask(with url: URL, completionHandler: @escaping ((Data) -> Void), errorHandler: @escaping ((Error) -> Void)) {
+        self.urlSession.dataTask(with: url){(data: Data?, response: URLResponse?, error: Error?) in
             DispatchQueue.main.async {
-                guard let data = data else{
+                guard let data = data else {
                     errorHandler(AppError.noDataReceived)
                     return
                 }
-                guard let response = response as? HTTPURLResponse, response.statusCode != 401  else{
+                guard let response = response as? HTTPURLResponse, response.statusCode != 401 else{
                     errorHandler(AppError.badStatusCode)
                     return
                 }
@@ -44,8 +45,11 @@ class NetworkHelper{
                         errorHandler(AppError.other(rawError: error))
                     }
                 }
-                completion(data)
+                
+                completionHandler(data)
             }
-        }.resume()
+            }.resume()
     }
 }
+
+

@@ -9,13 +9,33 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
 
+class AppDelegate: UIResponder, UIApplicationDelegate {let cellSpacing: CGFloat = 12
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //setUp the viewHirarchy
+        //1. setupWindow
+        window = UIWindow(frame: UIScreen.main.bounds)
+        //2. setup the root controller
+        let weatherViewController = WeatherViewController()
+        // this is how to add a name and image for the controller of a tabBar
+        let weatherTabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "magnifier"), tag: 1)
+        // adding the tabBarItem to the controller
+        weatherViewController.tabBarItem = weatherTabBarItem
+        // adding the tabBarItem to the favoriteController
+        let favoriteViewController = FavoriteViewController()
+        let favoriteTabBarItem = UITabBarItem(title: "Favorites", image: #imageLiteral(resourceName: "downloads"), tag: 1)
+        favoriteViewController.tabBarItem = favoriteTabBarItem
+
+        // add a navigation controller
+        let weatherNavigationController = UINavigationController(rootViewController: weatherViewController)
+        //add a tabBarController
+        let tabController = UITabBarController()
+        tabController.setViewControllers([weatherNavigationController, favoriteViewController], animated: true)
+        window?.rootViewController = tabController
+        //3. present it by make it  appear on the screen
+        window?.makeKeyAndVisible()
         return true
     }
 

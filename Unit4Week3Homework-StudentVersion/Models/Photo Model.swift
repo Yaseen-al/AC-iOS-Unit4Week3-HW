@@ -7,3 +7,14 @@
 //
 
 import Foundation
+struct allImageData: Codable {
+    let hits: [Photo]
+}
+struct Photo: Codable {
+    let likes: Double
+    let favorites: Double
+    let previewURL: String
+    let webformatURL: String
+    let user: String
+    let tags: String
+}
