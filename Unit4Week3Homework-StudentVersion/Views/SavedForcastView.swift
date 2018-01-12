@@ -11,7 +11,7 @@ import UIKit
 class SavedForcastView: UIView {
     lazy var savedForcastTableView: UITableView = {
         let tableView = UITableView(frame: self.bounds)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "savedForcast")
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "savedPhotosCell")
         return tableView
     }()
     lazy var collectioView: UICollectionView = {

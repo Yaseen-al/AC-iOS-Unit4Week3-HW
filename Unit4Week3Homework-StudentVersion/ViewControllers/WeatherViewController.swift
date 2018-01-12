@@ -67,12 +67,21 @@ class WeatherViewController: UIViewController {
         self.forcastSearchView.searchTextField.inputAccessoryView = doneToolbar
         self.forcastSearchView.searchTextField.inputAccessoryView = doneToolbar
     }
-    
+    //action button for the numKeypad if it is used
     @objc func doneButtonAction()
     {
         self.forcastSearchView.searchTextField.resignFirstResponder()
         self.forcastSearchView.searchTextField.resignFirstResponder()
+            guard let zipCode = Int(self.forcastSearchView.searchTextField.text!) else {
+                return
+            }
+            self.searchValue = self.forcastSearchView.searchTextField.text!
+            getForcasts(for: zipCode)
+            self.forcastSearchView.searchTextField.resignFirstResponder()
+            return
+
     }
+    //this is a test function for the button to test the operation of the segueue between controllers
     @objc func testFunction(button: UIButton){
         let destinationViewController = DetailedWeatherViewController()
         // use that to present the detailed viewCOntroller try to check more about
@@ -82,6 +91,7 @@ class WeatherViewController: UIViewController {
     func configureNavBar(){
         // Adding a Title to the navBar
         navigationItem.title =  "Search"
+        //this is add the test function for the button to test the operation of the segueue between controllers
         forcastSearchView.testButton.addTarget(self, action: #selector(testFunction), for: UIControlEvents.touchUpInside)
     }
 }
@@ -94,17 +104,24 @@ extension WeatherViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let forcastSetup = forcast[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityWeatherCell", for: indexPath) as! CustomSearchCollectionViewCell
+        SetupCell(from: forcastSetup, and: cell)
+        return cell
+    }
+    //collectionView cell setup
+    func SetupCell(from forcastSetup: Forcast, and cell: CustomSearchCollectionViewCell){
+        let date = forcastSetup.dateTimeISO.components(separatedBy: "-")
+        let secondPart = date[2]
+        let secondIndex = secondPart.index(secondPart.startIndex, offsetBy: 1)
+        let dayDate = secondPart[secondPart.startIndex...secondIndex]
+        cell.dateLabel.text = date[0...1].joined(separator: "-") + "-" + dayDate
         cell.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.05)
         cell.highTempLabel.text = "High: \(forcastSetup.maxTempC)°C"
         cell.lowTempLabel.text = "Low: \(forcastSetup.minTempC)°C"
         cell.conditionImage.image = UIImage(named: forcastSetup.icon)
-        // to scroll to a specific item
-        collectionView.showsVerticalScrollIndicator = true
-        collectionView.scrollsToTop = true
-        return cell
     }
 }
 extension WeatherViewController: UICollectionViewDelegate{
+    //seguing to the detailed viewController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destinationViewController = DetailedWeatherViewController()
         destinationViewController.cityName = cityName
@@ -117,6 +134,7 @@ extension WeatherViewController: UICollectionViewDelegate{
     
 }
 extension WeatherViewController: UICollectionViewDelegateFlowLayout{
+    //cell size setup and spacing between cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numCells: CGFloat = 3
         let numSpaces: CGFloat = numCells + 1
@@ -137,6 +155,7 @@ extension WeatherViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 extension WeatherViewController: UITextFieldDelegate{
+    //loading forcast when textfield has a valid zipCode
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let zipCode = Int(textField.text!) else {
             return false

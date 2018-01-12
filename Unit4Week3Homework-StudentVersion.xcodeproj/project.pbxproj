@@ -24,6 +24,7 @@
 		81D6F8E92007F29300D1F3A7 /* Photo APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8E82007F29300D1F3A7 /* Photo APIClient.swift */; };
 		81D6F8EB2007F33B00D1F3A7 /* Image APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */; };
 		81D6F8ED20080F1D00D1F3A7 /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */; };
+		81D6F8EF20081F7900D1F3A7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EE20081F7900D1F3A7 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		81D6F8E82007F29300D1F3A7 /* Photo APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo APIClient.swift"; sourceTree = "<group>"; };
 		81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image APIClient.swift"; sourceTree = "<group>"; };
 		81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
+		81D6F8EE20081F7900D1F3A7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				819AA31B20030FC500048DB7 /* ForcastSearchView.swift */,
 				819AA31D2003146A00048DB7 /* CustomSearchCollectionViewCell.swift */,
 				81D6F8DA20069EA600D1F3A7 /* DetailWeatherView.swift */,
+				81D6F8EE20081F7900D1F3A7 /* CustomTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				81D6F8E72007F26A00D1F3A7 /* Photo Model.swift in Sources */,
 				819AA318200305B600048DB7 /* SavedForcastView.swift in Sources */,
 				819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */,
+				81D6F8EF20081F7900D1F3A7 /* CustomTableViewCell.swift in Sources */,
 				81D6F8ED20080F1D00D1F3A7 /* FileManagerHelper.swift in Sources */,
 				819AA31C20030FC500048DB7 /* ForcastSearchView.swift in Sources */,
 				81D6F8DF2007138C00D1F3A7 /* Forcast Model.swift in Sources */,

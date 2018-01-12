@@ -37,10 +37,16 @@ extension FavoriteViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let photoSetup = savedPhotos[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "savedForcast", for: indexPath)
-        cell.backgroundColor = .cyan
-        cell.imageView?.image = #imageLiteral(resourceName: "bower-logo")
-        ImageAPIClient.manager.getImage(from: photoSetup.webformatURL, completionHandler: {cell.imageView?.image = $0; cell.setNeedsLayout()}, errorHandler: {print($0)})
+        let cell = tableView.dequeueReusableCell(withIdentifier: "savedPhotosCell", for: indexPath) as! CustomTableViewCell
+        cell.cellImage.image = #imageLiteral(resourceName: "bower-logo")
+        //This will make a image path to check if it is already save as a PNG or not
+        let imagePathName = photoSetup.webformatURL.components(separatedBy: "/").last!
+        //this checks if there is an image saved in the fileManager or not
+        if let image = FileManagerHelper.manager.getImage(with: imagePathName){
+            cell.cellImage.image = image
+        }else{
+            ImageAPIClient.manager.getImage(from: photoSetup.webformatURL, completionHandler: {cell.cellImage.image = $0; cell.setNeedsLayout(); FileManagerHelper.manager.saveImage(with: imagePathName, image: $0)}, errorHandler: {print($0)})
+        }
         return cell
     }
     

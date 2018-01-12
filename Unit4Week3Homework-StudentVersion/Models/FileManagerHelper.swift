@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class FileManagerHelper {
     private init() {}
-    let nasaImagesPath = "allSavedImages"
+    let savedImagesPath = "allSavedImages"
     static let manager = FileManagerHelper()
     private var savedImages = [Photo]() {
         didSet {
@@ -67,7 +67,7 @@ class FileManagerHelper {
         let propertyListEncoder = PropertyListEncoder()
         do {
             let encodedData = try propertyListEncoder.encode(savedImages)
-            let phoneURL = dataFilePath(withPathName: nasaImagesPath)
+            let phoneURL = dataFilePath(withPathName: savedImagesPath)
             try encodedData.write(to: phoneURL, options: .atomic)
         }
         catch {
@@ -78,7 +78,7 @@ class FileManagerHelper {
     func loadImages() {
         let propertyListDecoder = PropertyListDecoder()
         do {
-            let phoneURL = dataFilePath(withPathName: nasaImagesPath)
+            let phoneURL = dataFilePath(withPathName: savedImagesPath)
             let encodedData = try Data(contentsOf: phoneURL)
             let storedImages = try propertyListDecoder.decode([Photo].self, from: encodedData)
             savedImages = storedImages

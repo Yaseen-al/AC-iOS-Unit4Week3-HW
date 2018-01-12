@@ -29,6 +29,7 @@ struct Forcast: Codable{
     let avgTempC: Double
     let precipMM: Double
     let iceaccum: Double?
+    let dateTimeISO: String
     let maxHumidity: Double
     let minHumidity: Double
     let avgFeelslikeC: Double
