@@ -53,7 +53,7 @@ extension FavoriteViewController: UITableViewDataSource{
 }
 extension FavoriteViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height * 0.25
+        return tableView.frame.height * 0.35
     }
 }
 

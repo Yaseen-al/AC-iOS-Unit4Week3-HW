@@ -18,7 +18,7 @@ class DetailedWeatherViewController: UIViewController {
             guard let photo = currentPhoto else {
                 return
             }
-                        ImageAPIClient.manager.getImage(from:photo.webformatURL, completionHandler: {self.photo = $0}, errorHandler: {print($0)})
+            ImageAPIClient.manager.getImage(from:photo.webformatURL, completionHandler: {self.photo = $0}, errorHandler: {print($0)})
         }
     }
     var photos = [Photo](){
@@ -73,7 +73,15 @@ class DetailedWeatherViewController: UIViewController {
         guard let photo = currentPhoto else {
             return
         }
-        FileManagerHelper.manager.addNew(newPhoto: photo)
-        //TODO Save the Forcast
+        // chosing to save the image or to cancel through an alert controller that have a yes to save and cancel to discard
+        let alert = UIAlertController(title: "Do you want to save the image to your Favourites", message: "", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Ok", style: .default){(handler) in
+            FileManagerHelper.manager.addNew(newPhoto: photo)
+            self.tabBarController?.selectedIndex = 1
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }
