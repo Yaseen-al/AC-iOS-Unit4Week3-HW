@@ -21,18 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {let cellSpacing: CGFloat 
         let weatherViewController = WeatherViewController()
         // this is how to add a name and image for the controller of a tabBar
         let weatherTabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "magnifier"), tag: 1)
-        // adding the tabBarItem to the controller
+        // adding the tabBarItem to the weather controller
         weatherViewController.tabBarItem = weatherTabBarItem
         // adding the tabBarItem to the favoriteController
         let favoriteViewController = FavoriteViewController()
         let favoriteTabBarItem = UITabBarItem(title: "Favorites", image: #imageLiteral(resourceName: "downloads"), tag: 1)
         favoriteViewController.tabBarItem = favoriteTabBarItem
-
+        
+        // adding the tabBarItem to the mapView Controller
+        let mapViewController = MapViewController()
+        let mapViewControllerItem = UITabBarItem(title: "Map", image: #imageLiteral(resourceName: "map"), tag: 1)
+        let mapViewControllerNavigation = UINavigationController(rootViewController: mapViewController)
+        mapViewController.tabBarItem = mapViewControllerItem
         // add a navigation controller
         let weatherNavigationController = UINavigationController(rootViewController: weatherViewController)
         //add a tabBarController
         let tabController = UITabBarController()
-        tabController.setViewControllers([weatherNavigationController, favoriteViewController], animated: true)
+        tabController.setViewControllers([weatherNavigationController,mapViewControllerNavigation, favoriteViewController], animated: true)
         window?.rootViewController = tabController
         //3. present it by make it  appear on the screen
         window?.makeKeyAndVisible()

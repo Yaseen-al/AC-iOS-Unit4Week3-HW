@@ -11,6 +11,8 @@
 		5410A6C31FFFDF1200935A9A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410A6C21FFFDF1200935A9A /* WeatherViewController.swift */; };
 		5410A6C81FFFDF1200935A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5410A6C71FFFDF1200935A9A /* Assets.xcassets */; };
 		5410A6D31FFFDF6500935A9A /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */; };
+		810982D220087610004142A5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810982D120087610004142A5 /* MapView.swift */; };
+		815FEAC92008743600CF9587 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815FEAC82008743600CF9587 /* MapViewController.swift */; };
 		819AA3142000942D00048DB7 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA3132000942D00048DB7 /* FavoriteViewController.swift */; };
 		819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */; };
 		819AA318200305B600048DB7 /* SavedForcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AA317200305B600048DB7 /* SavedForcastView.swift */; };
@@ -35,6 +37,8 @@
 		5410A6C71FFFDF1200935A9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5410A6CC1FFFDF1200935A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5410A6D21FFFDF6500935A9A /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
+		810982D120087610004142A5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		815FEAC82008743600CF9587 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		819AA3132000942D00048DB7 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWeatherViewController.swift; sourceTree = "<group>"; };
 		819AA317200305B600048DB7 /* SavedForcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedForcastView.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				5410A6C21FFFDF1200935A9A /* WeatherViewController.swift */,
 				819AA31520009BCD00048DB7 /* DetailedWeatherViewController.swift */,
 				819AA3132000942D00048DB7 /* FavoriteViewController.swift */,
+				815FEAC82008743600CF9587 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				819AA31D2003146A00048DB7 /* CustomSearchCollectionViewCell.swift */,
 				81D6F8DA20069EA600D1F3A7 /* DetailWeatherView.swift */,
 				81D6F8EE20081F7900D1F3A7 /* CustomTableViewCell.swift */,
+				810982D120087610004142A5 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 				819AA3142000942D00048DB7 /* FavoriteViewController.swift in Sources */,
 				81D6F8DD20070F5A00D1F3A7 /* NetworkHelper.swift in Sources */,
 				81D6F8E92007F29300D1F3A7 /* Photo APIClient.swift in Sources */,
+				815FEAC92008743600CF9587 /* MapViewController.swift in Sources */,
 				81D6F8E72007F26A00D1F3A7 /* Photo Model.swift in Sources */,
 				819AA318200305B600048DB7 /* SavedForcastView.swift in Sources */,
 				819AA31620009BCD00048DB7 /* DetailedWeatherViewController.swift in Sources */,
@@ -224,6 +231,7 @@
 				81D6F8DF2007138C00D1F3A7 /* Forcast Model.swift in Sources */,
 				81D6F8EB2007F33B00D1F3A7 /* Image APIClient.swift in Sources */,
 				81D6F8E12007CA4000D1F3A7 /* Forcast APIClient.swift in Sources */,
+				810982D220087610004142A5 /* MapView.swift in Sources */,
 				5410A6C11FFFDF1200935A9A /* AppDelegate.swift in Sources */,
 				819AA31E2003146A00048DB7 /* CustomSearchCollectionViewCell.swift in Sources */,
 			);
