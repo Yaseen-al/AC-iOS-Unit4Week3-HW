@@ -14,11 +14,11 @@ class FavoriteViewController: UIViewController {
         }
     }
     let savedForcastView =  SavedForcastView()
-     let cellSpacing: CGFloat = 12
+    let cellSpacing: CGFloat = 12
     override func viewDidLoad() {
         view.backgroundColor = .white
-//        self.savedForcastView.collectioView.delegate = self
-//        self.savedForcastView.collectioView.dataSource = self
+        //        self.savedForcastView.collectioView.delegate = self
+        //        self.savedForcastView.collectioView.dataSource = self
         self.view.addSubview(savedForcastView)
         self.savedForcastView.savedForcastTableView.delegate = self
         self.savedForcastView.savedForcastTableView.dataSource = self
@@ -59,41 +59,41 @@ extension FavoriteViewController: UITableViewDelegate{
 
 
 /*
-extension FavoriteViewController: UICollectionViewDelegate{
-    
-}
-extension FavoriteViewController: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath)
-        cell.backgroundColor = .green
-        return cell
-    }
-}
-
-extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numCells: CGFloat = 1
-        let numSpaces: CGFloat = numCells + 1
-        
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-        
-        return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.35)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: 0, right: cellSpacing)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSpacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSpacing
-    }
-}
-*/
+ extension FavoriteViewController: UICollectionViewDelegate{
+ 
+ }
+ extension FavoriteViewController: UICollectionViewDataSource{
+ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+ return 100
+ }
+ 
+ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+ let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath)
+ cell.backgroundColor = .green
+ return cell
+ }
+ }
+ 
+ extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
+ func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+ let numCells: CGFloat = 1
+ let numSpaces: CGFloat = numCells + 1
+ 
+ let screenWidth = UIScreen.main.bounds.width
+ let screenHeight = UIScreen.main.bounds.height
+ 
+ return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: screenHeight * 0.35)
+ }
+ func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+ return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: 0, right: cellSpacing)
+ }
+ 
+ func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+ return cellSpacing
+ }
+ 
+ func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+ return cellSpacing
+ }
+ }
+ */

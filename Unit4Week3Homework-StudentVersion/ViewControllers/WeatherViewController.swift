@@ -30,7 +30,7 @@ class WeatherViewController: UIViewController {
     let forcastSearchView = ForcastSearchView()
     var forcast = [Forcast](){
         didSet{
-
+            
             self.forcastSearchView.collectioView.reloadData()
             print("forcasts loaded successfuly")
             
@@ -57,9 +57,9 @@ class WeatherViewController: UIViewController {
             print(" it is loaded from the defaults")
         }
         //for numberPad usage implement a done botton
-//        self.forcastSearchView.searchTextField.keyboardType = .numberPad
-//        addDoneButtonOnKeyboard()
-//        self.forcastSearchView.searchTextField.doneAccessory = true
+        //        self.forcastSearchView.searchTextField.keyboardType = .numberPad
+        //        addDoneButtonOnKeyboard()
+        //        self.forcastSearchView.searchTextField.doneAccessory = true
     }
     // one way to add a done button in numeriacal pad https://stackoverflow.com/questions/28338981/how-to-add-done-button-to-numpad-in-ios-8-using-swift
     func addDoneButtonOnKeyboard()
@@ -81,14 +81,14 @@ class WeatherViewController: UIViewController {
     {
         self.forcastSearchView.searchTextField.resignFirstResponder()
         self.forcastSearchView.searchTextField.resignFirstResponder()
-            guard let zipCode = Int(self.forcastSearchView.searchTextField.text!) else {
-                return
-            }
-            self.searchValue = self.forcastSearchView.searchTextField.text!
-            getForcasts(for: zipCode)
-            self.forcastSearchView.searchTextField.resignFirstResponder()
+        guard let zipCode = Int(self.forcastSearchView.searchTextField.text!) else {
             return
-
+        }
+        self.searchValue = self.forcastSearchView.searchTextField.text!
+        getForcasts(for: zipCode)
+        self.forcastSearchView.searchTextField.resignFirstResponder()
+        return
+        
     }
     //this is a test function for the button to test the operation of the segueue between controllers
     @objc func testFunction(button: UIButton){
@@ -96,7 +96,7 @@ class WeatherViewController: UIViewController {
         // use that to present the detailed viewCOntroller try to check more about
         self.navigationController?.pushViewController(destinationViewController, animated: true)
     }
-
+    
     func configureNavBar(){
         // Adding a Title to the navBar
         navigationItem.title =  "Search"
@@ -144,7 +144,7 @@ extension WeatherViewController: UICollectionViewDelegateFlowLayout{
         let numCells: CGFloat = 3
         let numSpaces: CGFloat = numCells + 1
         let screenWidth = UIScreen.main.bounds.width
-//        let screenHeight = UIScreen.main.bounds.height
+        //        let screenHeight = UIScreen.main.bounds.height
         return CGSize(width: (screenWidth - (cellSpacing * numSpaces)) / numCells, height: collectionView.frame.height * 0.85)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -200,6 +200,10 @@ extension UITextField{
     {
         self.resignFirstResponder()
     }
+}
+
+extension WeatherViewController{
+    //TODO Animation Stuff
 }
 
 

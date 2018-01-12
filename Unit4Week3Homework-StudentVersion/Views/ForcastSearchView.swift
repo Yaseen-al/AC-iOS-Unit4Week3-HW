@@ -17,7 +17,7 @@ class ForcastSearchView: UIView {
     lazy var testButton: UIButton = {
         let button = UIButton()
         button.setTitle("testMe", for: UIControlState.normal)
-
+        
         button.titleLabel?.textColor = .black
         button.backgroundColor = .orange
         return button
@@ -27,7 +27,7 @@ class ForcastSearchView: UIView {
         let label = UILabel()
         label.text = "Enter your Zip Code"
         label.textAlignment = .center
-//        label.contentMode = .scaleAspectFit
+        //        label.contentMode = .scaleAspectFit
         label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         //backgroundColor
         label.backgroundColor = .clear
@@ -71,13 +71,13 @@ class ForcastSearchView: UIView {
         setupViews()
     }
     private func setupViews(){
-                addSubview(backGroundView)
+        addSubview(backGroundView)
         setupCityLabel()
         setupCollectioView()
         setupSearchTextField()
         setupZipCodeLabel()
-//        setupTestButton()
-
+        //        setupTestButton()
+        
     }
     private func setupCityLabel(){
         //TODO add the constraints

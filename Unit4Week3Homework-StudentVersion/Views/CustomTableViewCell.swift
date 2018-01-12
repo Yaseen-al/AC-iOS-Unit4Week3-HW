@@ -24,12 +24,12 @@ class CustomTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setupViews(){
         setupImage()
-}
+    }
     func setupImage(){
-            addSubview(cellImage)
+        addSubview(cellImage)
         cellImage.translatesAutoresizingMaskIntoConstraints = false
         cellImage.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
         cellImage.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true

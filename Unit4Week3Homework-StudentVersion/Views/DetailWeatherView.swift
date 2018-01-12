@@ -77,8 +77,8 @@ class DetailedWeatherView: UIView {
         return label
     }()
     lazy var imageView: UIImageView = {
-       let imageView = UIImageView()
-//        imageView.backgroundColor = UIColor.cyan
+        let imageView = UIImageView()
+        //        imageView.backgroundColor = UIColor.cyan
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

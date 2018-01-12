@@ -8,8 +8,6 @@
 
 import Foundation
 import CoreLocation
-// api http://api.aerisapi.com/observations/11219?client_id=Zz0UAmuo5H0SGY8HDGQLH&client_secret=FjZ845rwjHMjwpySRtpAkSBTBPk8OhZ0S3wV9HTO
-//http://api.aerisapi.com/forecasts/search?query=name:manhattan&client_id=Zz0UAmuo5H0SGY8HDGQLH&client_secret=FjZ845rwjHMjwpySRtpAkSBTBPk8OhZ0S3wV9HTO
 class ZipCodeHelper {
     private init() {}
     static let manager = ZipCodeHelper()

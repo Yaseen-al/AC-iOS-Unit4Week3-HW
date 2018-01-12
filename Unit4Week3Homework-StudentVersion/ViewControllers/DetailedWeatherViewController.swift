@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SceneKit
+enum AnimationKeys: String {
+    case imageExit = "escapes the image to the corner"
+}
 class DetailedWeatherViewController: UIViewController {
     var photo: UIImage?{
         didSet{
@@ -77,11 +81,37 @@ class DetailedWeatherViewController: UIViewController {
         let alert = UIAlertController(title: "Do you want to save the image to your Favourites", message: "", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Ok", style: .default){(handler) in
             FileManagerHelper.manager.addNew(newPhoto: photo)
-            self.tabBarController?.selectedIndex = 1
+            self.animateImage()
+//            self.tabBarController?.selectedIndex = 2
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    // ToDo animation Stuff
+    func animateImage(){
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        let toValue = CATransform3DMakeScale(0.02, 0.02, 0)
+        let fromValue = CATransform3DMakeScale(1, 1, 0)
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        animation.duration = 2.0
+        detailedView.imageView.layer.add(animation, forKey: AnimationKeys.imageExit.rawValue)
+        animateTranslation()
+    }
+    func animateTranslation() {
+        let fromValue = CATransform3DMakeScale(1, 1, 0)
+        let toValue = CATransform3DMakeScale(-700, -200, 0)
+//        CATransform3DMakeScale(<#T##sx: CGFloat##CGFloat#>, <#T##sy: CGFloat##CGFloat#>, <#T##sz: CGFloat##CGFloat#>)
+        let animation = CABasicAnimation(keyPath: "transform.translation")
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        animation.duration = 2
+        detailedView.imageView.layer.add(animation, forKey: nil)
+    }
 }
+
+
+
