@@ -10,7 +10,7 @@ import UIKit
 
 class SavedForcastView: UIView {
     lazy var savedForcastTableView: UITableView = {
-        let tableView = UITableView(frame: self.bounds)
+        let tableView = UITableView()
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "savedPhotosCell")
         return tableView
     }()
@@ -23,14 +23,10 @@ class SavedForcastView: UIView {
     }()
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-        commonInit()
+                setupViews()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    private func commonInit(){
-        backgroundColor = .white
-        setupViews()
     }
     private func setupViews(){
 //        setupCollectioView()  // tableView required in the repo not a collection View
@@ -38,8 +34,14 @@ class SavedForcastView: UIView {
     }
     func setupCollectioView(){
         addSubview(collectioView)
+        
     }
     func setupSavedWeatherImagesTableView() {
         addSubview(savedForcastTableView)
+        savedForcastTableView.translatesAutoresizingMaskIntoConstraints = false
+        savedForcastTableView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        savedForcastTableView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        savedForcastTableView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor).isActive = true
+        savedForcastTableView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor).isActive = true
     }
 }

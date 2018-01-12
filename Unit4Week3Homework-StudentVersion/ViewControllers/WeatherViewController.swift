@@ -118,11 +118,7 @@ extension WeatherViewController: UICollectionViewDataSource{
     }
     //collectionView cell setup
     func SetupCell(from forcastSetup: Forcast, and cell: CustomSearchCollectionViewCell){
-        let date = forcastSetup.dateTimeISO.components(separatedBy: "-")
-        let secondPart = date[2]
-        let secondIndex = secondPart.index(secondPart.startIndex, offsetBy: 1)
-        let dayDate = secondPart[secondPart.startIndex...secondIndex]
-        cell.dateLabel.text = date[0...1].joined(separator: "-") + "-" + dayDate
+        cell.dateLabel.text = forcastSetup.dateTimeISO.components(separatedBy: "T").first!
         cell.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.05)
         cell.highTempLabel.text = "High: \(forcastSetup.maxTempC)°C"
         cell.lowTempLabel.text = "Low: \(forcastSetup.minTempC)°C"

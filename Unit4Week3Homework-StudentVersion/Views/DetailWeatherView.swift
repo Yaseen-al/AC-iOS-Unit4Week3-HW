@@ -8,39 +8,50 @@
 
 import UIKit
 class DetailedWeatherView: UIView {
+    lazy var backGroundView: UIImageView = {
+        let imageView = UIImageView(frame: bounds)
+        imageView.contentMode = .scaleAspectFill
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = imageView.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        imageView.addSubview(blurEffectView)
+        return imageView
+    }()
     lazy var perceptationLabel: UILabel = {
         let label = UILabel()
         label.text = "Precipitation"
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var windSpeedLabel: UILabel = {
         let label = UILabel()
         label.text = "Wind Speed"
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var sunsetLabel: UILabel = {
         let label = UILabel()
         label.text = "Sunset"
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var sunriseLabel: UILabel = {
         let label = UILabel()
         label.text = "Sunrise"
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var lowTempLabel: UILabel = {
         let label = UILabel()
         label.text = "This is the low Temperature"
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var highTempLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         label.text = "This is The high Temperature"
         return label
     }()
@@ -56,13 +67,13 @@ class DetailedWeatherView: UIView {
     lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = "This is going to be The header label"
-        label.backgroundColor = UIColor.cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var weatherStatusLabel: UILabel = {
         let label = UILabel()
         label.text = "This is going to be the weather status label"
-        label.backgroundColor = .cyan
+        label.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.01)
         return label
     }()
     lazy var imageView: UIImageView = {
@@ -74,12 +85,12 @@ class DetailedWeatherView: UIView {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         setupViews()
-        backgroundColor = .yellow
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     private func setupViews(){
+        addSubview(backGroundView)
         setupHeaderLabel()
         setupImageView()
         setupWeatherStatusLabel()
@@ -111,7 +122,7 @@ class DetailedWeatherView: UIView {
         weatherDetailsStackView.translatesAutoresizingMaskIntoConstraints = false
         weatherDetailsStackView.topAnchor.constraint(equalTo: weatherStatusLabel.bottomAnchor, constant: 10).isActive = true
         weatherDetailsStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        weatherDetailsStackView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.65).isActive = true
+        weatherDetailsStackView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.85).isActive = true
         weatherDetailsStackView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.35).isActive = true
     }
 }

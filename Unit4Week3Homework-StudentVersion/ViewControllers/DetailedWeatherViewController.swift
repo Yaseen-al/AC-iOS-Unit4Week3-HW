@@ -32,7 +32,7 @@ class DetailedWeatherViewController: UIViewController {
     }
     var cityName: String?{
         didSet{
-            detailedView.headerLabel.text = "WeatherForcast for \(cityName!)"
+            detailedView.headerLabel.text = "Weather Forcast for \(cityName!)"
         }
     }
     var forcast: Forcast?{
@@ -41,8 +41,8 @@ class DetailedWeatherViewController: UIViewController {
             detailedView.highTempLabel.text = "High Temp: \(forcast!.maxTempC)"
             detailedView.lowTempLabel.text = "Low Temp: \(forcast!.minTempC)"
             detailedView.perceptationLabel.text = "Perceptation: \(forcast!.precipMM)"
-            detailedView.sunriseLabel.text = "Sunrise : \(forcast!.sunriseISO)"
-            detailedView.sunsetLabel.text = "Sunset: \(forcast!.sunsetISO)"
+            detailedView.sunriseLabel.text = "Sunrise : \(forcast!.sunriseISO.components(separatedBy: "T")[1])"
+            detailedView.sunsetLabel.text = "Sunset: \(forcast!.sunsetISO.components(separatedBy: "T")[1])"
             detailedView.windSpeedLabel.text = "Wind Speed: \(forcast!.windSpeedKPH) km/Hr"
         }
     }
@@ -58,6 +58,7 @@ class DetailedWeatherViewController: UIViewController {
         self.view.backgroundColor = .gray
         view.addSubview(detailedView)
         detailedView.imageView.image = #imageLiteral(resourceName: "hamburg")
+        detailedView.backGroundView.image = #imageLiteral(resourceName: "nature")
         configureNavBar()
     }
     

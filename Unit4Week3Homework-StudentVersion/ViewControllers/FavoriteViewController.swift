@@ -16,7 +16,7 @@ class FavoriteViewController: UIViewController {
     let savedForcastView =  SavedForcastView()
      let cellSpacing: CGFloat = 12
     override func viewDidLoad() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
 //        self.savedForcastView.collectioView.delegate = self
 //        self.savedForcastView.collectioView.dataSource = self
         self.view.addSubview(savedForcastView)
@@ -56,9 +56,6 @@ extension FavoriteViewController: UITableViewDelegate{
         return tableView.frame.height * 0.25
     }
 }
-
-
-
 
 
 /*
