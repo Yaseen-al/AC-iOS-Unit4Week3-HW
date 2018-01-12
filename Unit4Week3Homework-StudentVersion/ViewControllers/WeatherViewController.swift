@@ -47,6 +47,11 @@ class WeatherViewController: UIViewController {
         self.forcastSearchView.collectioView.delegate = self
         self.forcastSearchView.collectioView.dataSource = self
         self.forcastSearchView.searchTextField.delegate = self
+        // check for saved zipCode in defaults
+        if let zipCodeFromDefaults = UserDefaultsHelper.manager.getZipCode(){
+            self.searchValue = zipCodeFromDefaults.description
+            print(" it is loaded from the defaults")
+        }
         //for numberPad usage implement a done botton
 //        self.forcastSearchView.searchTextField.keyboardType = .numberPad
 //        addDoneButtonOnKeyboard()
@@ -160,6 +165,7 @@ extension WeatherViewController: UITextFieldDelegate{
         guard let zipCode = Int(textField.text!) else {
             return false
         }
+        UserDefaultsHelper.manager.saveZipCode(zipCode: zipCode)
         self.searchValue = textField.text!
         getForcasts(for: zipCode)
         textField.resignFirstResponder()

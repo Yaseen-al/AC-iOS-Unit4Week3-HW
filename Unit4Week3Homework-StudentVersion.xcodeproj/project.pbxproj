@@ -25,6 +25,7 @@
 		81D6F8EB2007F33B00D1F3A7 /* Image APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */; };
 		81D6F8ED20080F1D00D1F3A7 /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */; };
 		81D6F8EF20081F7900D1F3A7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8EE20081F7900D1F3A7 /* CustomTableViewCell.swift */; };
+		81D6F8F320085D4700D1F3A7 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6F8F220085D4700D1F3A7 /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		81D6F8EA2007F33B00D1F3A7 /* Image APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image APIClient.swift"; sourceTree = "<group>"; };
 		81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
 		81D6F8EE20081F7900D1F3A7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		81D6F8F220085D4700D1F3A7 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				81D6F8DE2007138C00D1F3A7 /* Forcast Model.swift */,
 				81D6F8E02007CA4000D1F3A7 /* Forcast APIClient.swift */,
 				81D6F8EC20080F1D00D1F3A7 /* FileManagerHelper.swift */,
+				81D6F8F220085D4700D1F3A7 /* UserDefaultsHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D6F8F320085D4700D1F3A7 /* UserDefaultsHelper.swift in Sources */,
 				5410A6D31FFFDF6500935A9A /* ZipCodeHelper.swift in Sources */,
 				5410A6C31FFFDF1200935A9A /* WeatherViewController.swift in Sources */,
 				81D6F8DB20069EA600D1F3A7 /* DetailWeatherView.swift in Sources */,
