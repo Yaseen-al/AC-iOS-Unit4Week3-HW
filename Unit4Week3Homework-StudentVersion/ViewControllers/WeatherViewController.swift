@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController {
     }
     var searchValue = ""{
         didSet{
+            
             ZipCodeHelper.manager.getLocationName(from: searchValue, completionHandler: {self.cityName = $0}, errorHandler: {print($0)})
         }
     }
@@ -29,6 +30,7 @@ class WeatherViewController: UIViewController {
     let forcastSearchView = ForcastSearchView()
     var forcast = [Forcast](){
         didSet{
+
             self.forcastSearchView.collectioView.reloadData()
             print("forcasts loaded successfuly")
             
@@ -49,6 +51,8 @@ class WeatherViewController: UIViewController {
         self.forcastSearchView.searchTextField.delegate = self
         // check for saved zipCode in defaults
         if let zipCodeFromDefaults = UserDefaultsHelper.manager.getZipCode(){
+            getForcasts(for: zipCodeFromDefaults)
+            self.forcastSearchView.searchTextField.text = zipCodeFromDefaults.description
             self.searchValue = zipCodeFromDefaults.description
             print(" it is loaded from the defaults")
         }
