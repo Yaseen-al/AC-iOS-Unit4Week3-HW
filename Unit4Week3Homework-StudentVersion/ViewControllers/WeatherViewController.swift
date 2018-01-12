@@ -9,14 +9,11 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-    var tenDaysfromNow: Date {
-        return (Calendar.current as NSCalendar).date(byAdding: .day, value: 10, to: Date(), options: [])!
-    }
+
     var cityName = ""{
         didSet{
             forcastSearchView.cityLabel.text = "Weather forcast for \(cityName)"
             print(cityName)
-            print(tenDaysfromNow)
         }
     }
     var searchValue = ""{
@@ -39,7 +36,8 @@ class WeatherViewController: UIViewController {
     }
     
     func getForcasts(for zipCode: Int){
-        ForcastAPIClient.manager.getForcasts(for: zipCode.description, completionHandler: {self.forcast = $0}, errorHandler: {print($0)})
+        //I will add another api call in the error handler to search fo the city by name to get the date in case the zip code didn't work
+        ForcastAPIClient.manager.getForcasts(for: zipCode.description, completionHandler: {self.forcast = $0}, errorHandler: {print($0); self.forcastSearchView.searchTextField.text = "There is no Data for this ZipCode"})
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,7 +160,8 @@ extension WeatherViewController: UICollectionViewDelegateFlowLayout{
 extension WeatherViewController: UITextFieldDelegate{
     //loading forcast when textfield has a valid zipCode
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let zipCode = Int(textField.text!) else {
+        guard let zipCode = Int(textField.text!), textField.text?.count == 5 else {
+            textField.text = "Please enter a valid Zip Code"
             return false
         }
         UserDefaultsHelper.manager.saveZipCode(zipCode: zipCode)
@@ -205,5 +204,8 @@ extension UITextField{
 extension WeatherViewController{
     //TODO Animation Stuff
 }
-
+//To get 10 days from now use the following
+var tenDaysfromNow: Date {
+    return (Calendar.current as NSCalendar).date(byAdding: .day, value: 10, to: Date(), options: [])!
+}
 
